@@ -2088,7 +2088,7 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("router-view");
+  return _c("v-app", [_c("router-view")], 1);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -2111,7 +2111,15 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("v-app", [_c("v-container", [_vm._v("\n    \n      hello\n    \n  ")])], 1);
+  return _c("v-main", {
+    staticClass: "main"
+  }, [_c("v-container", {
+    staticClass: "text",
+    staticStyle: {
+      color: "aliceblue",
+      "text-align": "center"
+    }
+  }, [_c("h1", [_vm._v("Hi, I'm Loïc, welcome to my page.")])])], 1);
 };
 var staticRenderFns = [];
 render._withStripped = true;
