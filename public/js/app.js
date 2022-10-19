@@ -2070,7 +2070,7 @@ __webpack_require__.r(__webpack_exports__);
     return {
       typeValue: "",
       typeStatus: false,
-      displayTextArray: ["Hi,", " I'm Loïc NGUESSIE,", "welcome to my page !"],
+      displayTextArray: ["Hi,", " I'm Loïc NGUESSIE,", " welcome to my page !"],
       typingSpeed: 100,
       newTextDelay: 2000,
       displayTextArrayIndex: 0,
@@ -2093,6 +2093,7 @@ __webpack_require__.r(__webpack_exports__);
       } else {
         this.charIndex = 0;
         this.displayTextArrayIndex += 1;
+        if (this.displayTextArray.join("").length == this.typeValue.length) return;
         setTimeout(this.typeText, this.typingSpeed + 1000);
       }
     } // },

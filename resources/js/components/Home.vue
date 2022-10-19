@@ -89,7 +89,7 @@
       return {
         typeValue: "",
         typeStatus: false,
-        displayTextArray: ["Hi,", " I'm Loïc NGUESSIE,", "welcome to my page !"],
+        displayTextArray: ["Hi,", " I'm Loïc NGUESSIE,", " welcome to my page !"],
         typingSpeed: 100,
         newTextDelay: 2000,
         displayTextArrayIndex: 0,
@@ -118,6 +118,9 @@
         } else {
           this.charIndex = 0;
           this.displayTextArrayIndex += 1;
+
+          if (this.displayTextArray.join("").length == this.typeValue.length)
+            return;
           setTimeout(this.typeText, this.typingSpeed + 1000);
         }
       },
