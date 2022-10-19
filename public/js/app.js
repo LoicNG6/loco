@@ -2070,9 +2070,8 @@ __webpack_require__.r(__webpack_exports__);
     return {
       typeValue: "",
       typeStatus: false,
-      displayTextArray: ["YouTuber", "Developer", "Blogger", "Designer", "Freelancer"],
+      displayTextArray: ["Hi,", " I'm Loïc NGUESSIE,", "welcome to my page !"],
       typingSpeed: 100,
-      erasingSpeed: 100,
       newTextDelay: 2000,
       displayTextArrayIndex: 0,
       charIndex: 0
@@ -2092,23 +2091,11 @@ __webpack_require__.r(__webpack_exports__);
         this.charIndex += 1;
         setTimeout(this.typeText, this.typingSpeed);
       } else {
-        this.typeStatus = false;
-        setTimeout(this.eraseText, this.newTextDelay);
-      }
-    },
-    eraseText: function eraseText() {
-      if (this.charIndex > 0) {
-        if (!this.typeStatus) this.typeStatus = true;
-        this.typeValue = this.displayTextArray[this.displayTextArrayIndex].substring(0, this.charIndex - 1);
-        this.charIndex -= 1;
-        setTimeout(this.eraseText, this.erasingSpeed);
-      } else {
-        this.typeStatus = false;
+        this.charIndex = 0;
         this.displayTextArrayIndex += 1;
-        if (this.displayTextArrayIndex >= this.displayTextArray.length) this.displayTextArrayIndex = 0;
         setTimeout(this.typeText, this.typingSpeed + 1000);
       }
-    }
+    } // },
   }
 });
 
@@ -2156,7 +2143,7 @@ var render = function render() {
     staticClass: "main"
   }, [_c("div", {
     staticClass: "container"
-  }, [_c("h1", [_vm._v("\n      Hi, I'm a\n      "), _c("span", {
+  }, [_c("h1", [_c("span", {
     staticClass: "typed-text"
   }, [_vm._v(_vm._s(_vm.typeValue))]), _vm._v(" "), _c("span", {
     staticClass: "blinking-cursor"
@@ -2292,7 +2279,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".container[data-v-f2b6376c] {\n  width: 100%;\n  height: 100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\nh1[data-v-f2b6376c] {\n  font-size: 6rem;\n  font-weight: normal;\n}\nh1 span.typed-text[data-v-f2b6376c] {\n  color: #d2b94b;\n}\n.blinking-cursor[data-v-f2b6376c] {\n  font-size: 6rem;\n  color: #2c3e50;\n  animation: 1s blink-f2b6376c step-end infinite;\n}\n@keyframes blink-f2b6376c {\nfrom, to {\n    color: transparent;\n}\n50% {\n    color: #2c3e50;\n}\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".container[data-v-f2b6376c] {\n  width: 100%;\n  height: 100vh;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\nh1[data-v-f2b6376c] {\n  font-size: 6rem;\n  font-weight: normal;\n}\nh1 span.typed-text[data-v-f2b6376c] {\n  color: white;\n}\n.blinking-cursor[data-v-f2b6376c] {\n  font-size: 6rem;\n  color: #2c3e50;\n  animation: 1s blink-f2b6376c step-end infinite;\n}\n@keyframes blink-f2b6376c {\nfrom, to {\n    color: transparent;\n}\n50% {\n    color: #2c3e50;\n}\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
