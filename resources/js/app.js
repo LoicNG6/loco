@@ -5,6 +5,7 @@ import App from './components/App.vue';
 import router from './router/index.js';
 import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.min.css'
+import '@mdi/font/css/materialdesignicons.css';
 
 Vue.use(VueRouter);
 Vue.use(Vuetify);
@@ -14,8 +15,10 @@ const app = new Vue({
     router: router,
     vuetify: new Vuetify(),
     components: {
-        "home": App,
+        "app": App,
     },
+    icons: 'mdi',
+
 });
 
 app.$mount()
