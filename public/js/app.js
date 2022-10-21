@@ -2173,10 +2173,36 @@ var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c("v-container", {
-    staticStyle: {
-      border: "solid"
+    staticClass: "height-contain",
+    attrs: {
+      fluid: ""
     }
-  }, [_c("h1", [_vm._v("in the Home page")])]);
+  }, [_c("v-row", [_c("v-app-bar", {
+    attrs: {
+      color: "brown darken-3",
+      dark: ""
+    }
+  }, [_c("v-row", {
+    attrs: {
+      justify: "space-between"
+    }
+  }, [_c("v-col", {
+    attrs: {
+      cols: "auto"
+    }
+  }, [_c("v-app-bar-nav-icon")], 1), _vm._v(" "), _c("v-col", {
+    attrs: {
+      cols: "auto"
+    }
+  }, [_c("v-toolbar-title", [_c("h2", [_vm._v("Loco")])])], 1), _vm._v(" "), _c("v-col", {
+    attrs: {
+      cols: "auto"
+    }
+  }, [_c("v-spacer"), _vm._v(" "), _c("v-btn", {
+    attrs: {
+      icon: ""
+    }
+  }, [_c("v-icon", [_vm._v("mdi-magnify")])], 1)], 1)], 1)], 1)], 1), _vm._v(" "), _c("v-row", [_c("v-col")], 1)], 1);
 };
 var staticRenderFns = [];
 render._withStripped = true;
