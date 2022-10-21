@@ -4,9 +4,13 @@ import Home from "../components/Home.vue";
 const routes = [
     {
         path: "/",
-        name: "welcome",
+        redirect: "/NGUESSIE-Loic",
+    },
+    {
+        path: "/NGUESSIE-Loic",
+        name: "Loco",
         component: Welcome,
-        meta: { title: "welcome" },
+        meta: { title: "Loco" },
         children: [
             {
                 path: "home",
@@ -15,13 +19,8 @@ const routes = [
                 meta: { title: "home" },
             },
         ],
+
     },
-    // {
-    //     path: "/home",
-    //     name: "home",
-    //     component: Home,
-    //     meta: {title: "home"},
-    // },
 ];
 
 const router = new VueRouter({

@@ -2134,7 +2134,7 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("v-app", [_c("router-view")], 1);
+  return _c("router-view");
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -2157,14 +2157,7 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("v-container", {
-    staticStyle: {
-      border: "solid"
-    },
-    attrs: {
-      fluid: ""
-    }
-  }, [_vm._v("\n  in the home page\n  "), _c("router-view")], 1);
+  return _c("h1", [_vm._v("hello. You're in the home page")]);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -2187,8 +2180,11 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("v-main", {
-    staticClass: "main text"
+  return _vm.$route.name == "Loco" ? _c("v-main", {
+    staticClass: "main text",
+    staticStyle: {
+      border: "solid"
+    }
   }, [_c("v-container", [_c("v-row", {
     attrs: {
       justify: "center",
@@ -2232,7 +2228,7 @@ var render = function render() {
     attrs: {
       light: ""
     }
-  }, [_vm._v(" mdi-arrow-right ")])], 1)], 1)], 1)], 1), _vm._v(" "), _c("router-view")], 1);
+  }, [_vm._v(" mdi-arrow-right ")])], 1)], 1)], 1)], 1)], 1) : _c("v-main", [_c("router-view")], 1);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -2335,10 +2331,13 @@ __webpack_require__.r(__webpack_exports__);
 
 var routes = [{
   path: "/",
-  name: "welcome",
+  redirect: "/NGUESSIE-Loic"
+}, {
+  path: "/NGUESSIE-Loic",
+  name: "Loco",
   component: _components_Welcome_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
   meta: {
-    title: "welcome"
+    title: "Loco"
   },
   children: [{
     path: "home",
@@ -2348,15 +2347,7 @@ var routes = [{
       title: "home"
     }
   }]
-}
-// {
-//     path: "/home",
-//     name: "home",
-//     component: Home,
-//     meta: {title: "home"},
-// },
-];
-
+}];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]({
   mode: 'history',
   base: __dirname,

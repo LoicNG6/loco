@@ -1,5 +1,9 @@
 <template>
-  <v-main class="main text">
+  <v-main
+    class="main text"
+    style="border: solid"
+    v-if="$route.name == 'Loco'"
+  >
     <v-container>
       <v-row justify="center" align-content="center">
         <v-col style="text-align: center" cols="auto" class="px-0">
@@ -20,7 +24,9 @@
         </v-col>
       </v-row>
     </v-container>
-    <router-view></router-view>
+  </v-main>
+  <v-main v-else>
+    <router-view />
   </v-main>
 </template>
 

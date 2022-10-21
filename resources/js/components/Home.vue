@@ -1,6 +1,3 @@
 <template>
-  <v-container fluid style="border:solid">
-    in the home page
-    <router-view />
-  </v-container>
+  <h1>hello. You're in the home page</h1>
 </template>
