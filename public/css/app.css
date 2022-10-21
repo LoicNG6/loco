@@ -4,9 +4,9 @@ body {
 
 .main {
     background: linear-gradient(rgb(111, 75, 62), rgb(62, 39, 35));
-    align-items: center;
 }
 
 .text {
     font-size: x-large;
+    color:white;
 }

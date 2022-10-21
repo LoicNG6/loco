@@ -1,10 +1,11 @@
 <template>
   <v-main
     class="main text"
-    style="border: solid"
-    v-if="$route.name == 'Loco'"
+    :style="$route.name == 'Loco' ? 'align-items: center' : ''"
   >
-    <v-container>
+    <v-container
+      v-if="$route.name == 'Loco'"
+    >
       <v-row justify="center" align-content="center">
         <v-col style="text-align: center" cols="auto" class="px-0">
           <span class="typed-text">
@@ -24,9 +25,7 @@
         </v-col>
       </v-row>
     </v-container>
-  </v-main>
-  <v-main v-else>
-    <router-view />
+    <router-view v-else />
   </v-main>
 </template>
 

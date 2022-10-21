@@ -1,3 +1,8 @@
 <template>
-  <h1>hello. You're in the home page</h1>
+  <v-container style="border: solid;">
+    <h1>in the Home page</h1>
+  </v-container>
 </template>
+<script>
+  export default {};
+</script>
