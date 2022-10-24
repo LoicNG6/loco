@@ -1,0 +1,12 @@
+body {
+  margin: 0%;
+}
+
+.main {
+  background: linear-gradient(rgb(111, 75, 62), rgb(62, 39, 35));
+}
+
+.text {
+  font-size: x-large;
+  color: rgb(205, 194, 194);
+}
