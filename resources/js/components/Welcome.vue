@@ -1,6 +1,6 @@
 <template>
   <v-main
-    class="main text"
+    class="background-color text"
     :style="$route.name == 'Loco' ? 'align-items: center' : ''"
   >
     <v-container

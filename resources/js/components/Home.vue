@@ -16,9 +16,12 @@
         </v-col>
       </v-row>
     </v-app-bar>
-    <v-main class="main">
-      <v-container class="main" fluid>
+    <v-main class="background-color">
+      <v-container fluid>
         <v-row>
+          <v-col style="border:solid" cols="3" v-for="i in 10" :key="i">
+            <v-card height="200" dark color="white"> hello </v-card>
+          </v-col>
         </v-row>
       </v-container>
     </v-main>
@@ -27,7 +30,8 @@
 <script>
   export default {
     data: () => ({
-      drawer: null,
+      drawer: false,
     }),
+    
   };
 </script>
