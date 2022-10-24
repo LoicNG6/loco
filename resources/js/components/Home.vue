@@ -19,7 +19,7 @@
     <v-main class="background-color">
       <v-container fluid>
         <v-row>
-          <v-col style="border:solid" cols="3" v-for="i in 10" :key="i">
+          <v-col style="border: solid" cols="3" v-for="i in 10" :key="i">
             <v-card height="200" dark color="white"> hello </v-card>
           </v-col>
         </v-row>
@@ -29,9 +29,14 @@
 </template>
 <script>
   export default {
-    data: () => ({
-      drawer: false,
-    }),
+    data: () => {
+      return {
+        drawer: false,
+      };
+    },
+    mounted() {},
+    methods: {
     
+    },
   };
 </script>
