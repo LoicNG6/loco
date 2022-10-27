@@ -3,7 +3,7 @@
     <v-navigation-drawer class="text" color="brown darken-3" dark permanent app>
       <v-list-item style="height: 63px; text-align: center">
         <v-list-item-content>
-          <v-list-item-title class="text-h6">NGUESSIE Loïc</v-list-item-title>
+          <v-list-item-title class="text-h6"><h3>Loco</h3></v-list-item-title>
         </v-list-item-content>
       </v-list-item>
 
@@ -61,10 +61,10 @@
       </v-btn>
     </v-navigation-drawer>
 
-    <v-app-bar color="brown darken-3" dark app>
-      <v-row align-content="center" justify="space-between">
-        <v-col cols="auto">
-          <v-toolbar-title> <h3>Loco</h3></v-toolbar-title>
+    <v-app-bar color="brown darken-3" dark app class="py-4">
+      <v-row align-content="center" justify="space-between" style="border:solid">
+        <v-col cols="auto" style="border:solid">
+          <v-text-field outlined dense></v-text-field>
         </v-col>
         <v-col cols="auto">
           <v-btn icon>

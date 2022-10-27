@@ -2561,7 +2561,7 @@ var render = function render() {
     }
   }, [_c("v-list-item-content", [_c("v-list-item-title", {
     staticClass: "text-h6"
-  }, [_vm._v("NGUESSIE Loïc")])], 1)], 1), _vm._v(" "), _c("v-divider"), _vm._v(" "), _c("v-list", {
+  }, [_c("h3", [_vm._v("Loco")])])], 1)], 1), _vm._v(" "), _c("v-divider"), _vm._v(" "), _c("v-list", {
     staticClass: "pa-0",
     attrs: {
       dense: "",
@@ -2645,21 +2645,33 @@ var render = function render() {
       cols: "6"
     }
   }, [_vm._v(" Admin ")])], 1)], 1)], 1), _vm._v(" "), _c("v-app-bar", {
+    staticClass: "py-4",
     attrs: {
       color: "brown darken-3",
       dark: "",
       app: ""
     }
   }, [_c("v-row", {
+    staticStyle: {
+      border: "solid"
+    },
     attrs: {
       "align-content": "center",
       justify: "space-between"
     }
   }, [_c("v-col", {
+    staticStyle: {
+      border: "solid"
+    },
     attrs: {
       cols: "auto"
     }
-  }, [_c("v-toolbar-title", [_c("h3", [_vm._v("Loco")])])], 1), _vm._v(" "), _c("v-col", {
+  }, [_c("v-text-field", {
+    attrs: {
+      outlined: "",
+      dense: ""
+    }
+  })], 1), _vm._v(" "), _c("v-col", {
     attrs: {
       cols: "auto"
     }
