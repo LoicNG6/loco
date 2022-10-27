@@ -1,14 +1,15 @@
 <template>
   <v-main
-    class="background-color text"
+    class="background-color"
     :style="$route.name == 'Loco' ? 'align-items: center' : ''"
   >
     <v-container
       v-if="$route.name == 'Loco'"
+      class="title" 
     >
       <v-row justify="center" align-content="center">
         <v-col style="text-align: center" cols="auto" class="px-0">
-          <span class="typed-text">
+          <span>
             {{ typeValue }}
           </span>
           <span v-show="setTypeStatus" class="blinking-cursor">|</span>

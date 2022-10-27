@@ -16,7 +16,7 @@ class TopicFactory extends Factory
     {
         return [
             'title' => $this->faker->name(),
-            'description' => Str::random(10),
+            'description' => Str::random(100),
         ];
     }
 }

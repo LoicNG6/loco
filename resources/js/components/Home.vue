@@ -1,26 +1,33 @@
 <template>
-  <v-app class="main">
-    <v-navigation-drawer v-model="drawer" app> </v-navigation-drawer>
-    <v-app-bar color="brown darken-3" dark app>
-      <v-row align-content="center" justify="space-between">
-        <v-col cols="auto" @click="drawer = !drawer">
-          <v-app-bar-nav-icon></v-app-bar-nav-icon>
-        </v-col>
-        <v-col cols="auto">
-          <v-toolbar-title> <h3>Loco</h3></v-toolbar-title>
-        </v-col>
-        <v-col cols="auto">
-          <v-btn icon>
-            <v-icon>mdi-magnify</v-icon>
-          </v-btn>
-        </v-col>
-      </v-row>
-    </v-app-bar>
-    <v-main class="background-color">
-      <v-container fluid>
-        <v-row>
-          <v-col style="border: solid" cols="3" v-for="i in 10" :key="i">
-            <v-card height="200" dark color="white"> hello </v-card>
+  <v-app>
+    <v-main class="background-color pa-0">
+      <v-app-bar color="brown darken-3" dark app>
+        <v-row align-content="center" justify="space-between">
+          <v-col cols="auto" @click="changeDrawer">
+            <v-app-bar-nav-icon></v-app-bar-nav-icon>
+          </v-col>
+          <v-col cols="auto">
+            <v-toolbar-title> <h3>Loco</h3></v-toolbar-title>
+          </v-col>
+          <v-col cols="auto">
+            <v-btn icon>
+              <v-icon>mdi-magnify</v-icon>
+            </v-btn>
+          </v-col>
+        </v-row>
+      </v-app-bar>
+      
+      <v-container fluid style="border:solid">
+        <v-row justify="space-around">
+          <v-col cols="2" v-for="(topic, index) in topics" :key="index">
+            <vOwnCard>
+              <template v-slot:title>
+                {{ topic.title }}
+              </template>
+              <template v-slot:description>
+                {{ topic.description }}
+              </template>
+            </vOwnCard>
           </v-col>
         </v-row>
       </v-container>
@@ -28,15 +35,39 @@
   </v-app>
 </template>
 <script>
+  import axios from "axios";
+  import vOwnCard from "./tools/VCard.vue";
+
   export default {
+    components: {
+      vOwnCard,
+    },
     data: () => {
       return {
         drawer: false,
+        topics: null,
       };
     },
-    mounted() {},
+    mounted() {
+      this.getTopics();
+    },
     methods: {
-    
+      changeDrawer(){
+        this.drawer = !this.drawer;
+      },
+      getTopics() {
+        axios
+          .get("/api/topics")
+          .then((res) => {
+            this.topics = res.data.data;
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      },
+      goToSection() {
+        this.router.push({ name: "" });
+      },
     },
   };
 </script>

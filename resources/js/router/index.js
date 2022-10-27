@@ -1,6 +1,9 @@
 import VueRouter from "vue-router";
 import Welcome from "../components/Welcome.vue";
 import Home from "../components/Home.vue";
+import Section from "../components/Sections.vue";
+import Menu from "../components/tools/VMenu";
+
 const routes = [
     {
         path: "/",
@@ -15,8 +18,14 @@ const routes = [
             {
                 path: "home",
                 name: "home",
-                component: Home,
-                meta: { title: "home" },
+                component: Menu,
+                children: [
+                    {
+                        path: "section/:id",
+                        name: "section",
+                        component: Section,
+                    },
+                ]
             },
         ],
 
@@ -25,7 +34,6 @@ const routes = [
 
 const router = new VueRouter({
     mode: 'history',
-    base: __dirname,
     routes
 });
 

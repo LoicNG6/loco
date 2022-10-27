@@ -6,7 +6,12 @@ body {
   background: linear-gradient(rgb(111, 75, 62), rgb(62, 39, 35));
 }
 
-.text {
+.title {
   font-size: x-large;
   color: rgb(205, 194, 194);
+}
+
+.text {
+  font-size: large;
+  color: white;
 }
