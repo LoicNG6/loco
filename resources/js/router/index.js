@@ -2,7 +2,6 @@ import VueRouter from "vue-router";
 import Welcome from "../components/Welcome.vue";
 import Home from "../components/Home.vue";
 import Section from "../components/Sections.vue";
-import Menu from "../components/tools/VMenu";
 
 const routes = [
     {
@@ -18,7 +17,7 @@ const routes = [
             {
                 path: "home",
                 name: "home",
-                component: Menu,
+                component: Home,
                 children: [
                     {
                         path: "section/:id",

@@ -23,7 +23,7 @@
           justify-center
           style="text-align: center"
         >
-          <v-btn width="130" color="brown">
+          <v-btn width="130" color="#4e382f">
             <v-icon light> mdi-eye-outline </v-icon>
           </v-btn>
         </v-col>
