@@ -3,10 +3,9 @@
     class="background-color"
     :style="$route.name == 'Loco' ? 'align-items: center' : ''"
   >
-    <v-container
-      v-if="$route.name == 'Loco'"
-      class="title" 
-    >
+    <v-top-menu v-if="$route.name != 'Loco'"></v-top-menu>
+    <v-left-menu v-if="$route.name != 'Loco'"></v-left-menu>
+    <v-container v-if="$route.name == 'Loco'" class="title">
       <v-row justify="center" align-content="center">
         <v-col style="text-align: center" cols="auto" class="px-0">
           <span>
@@ -46,7 +45,13 @@
 </style>
 
 <script>
+  import VTopMenu from "./tools/VTopMenu.vue";
+  import VLeftMenu from "./tools/VLeftMenu.vue";
   export default {
+    components: {
+      VTopMenu,
+      VLeftMenu,
+    },
     data: () => {
       return {
         typeValue: "",

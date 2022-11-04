@@ -1,8 +1,6 @@
 <template>
   <v-app>
     <v-main class="background-color pa-0">
-      <v-top-menu></v-top-menu>
-      <v-left-menu></v-left-menu>
       <v-container fluid>
         <v-row justify="space-around">
           <v-col cols="2" v-for="(topic, index) in topics" :key="index">
@@ -23,14 +21,10 @@
 <script>
   import axios from "axios";
   import VOwnCard from "./tools/VCard.vue";
-  import VTopMenu from "./tools/VTopMenu.vue";
-  import VLeftMenu from "./tools/VLeftMenu.vue";
 
   export default {
     components: {
       VOwnCard,
-      VTopMenu,
-      VLeftMenu,
     },
     data: () => {
       return {

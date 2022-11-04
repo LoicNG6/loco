@@ -43,6 +43,7 @@
     <v-divider style="position: relative; top: 50%"></v-divider>
 
     <v-btn
+      to="admin"
       color="#4e382f"
       rounded
       height="80"
@@ -83,7 +84,7 @@
             positon: 2,
             title: "About",
             icon: "mdi-information-outline",
-            to: "information",
+            to: "about",
           },
         ],
         selectedMenu: null,
@@ -92,7 +93,7 @@
     methods: {
       changeMenu(route_name) {
         console.log(route_name);
-        // return this.$router.push({ name: route_name });
+        return this.$router.push({ name: route_name });
       },
     },
   };
