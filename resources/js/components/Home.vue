@@ -2,8 +2,8 @@
   <v-app>
     <v-main class="background-color pa-0">
       <v-container fluid>
-        <v-row justify="space-around">
-          <v-col cols="2" v-for="(topic, index) in topics" :key="index">
+        <v-row >
+          <v-col cols="3" v-for="(topic, index) in topics" :key="index">
             <v-own-card>
               <template v-slot:title>
                 {{ topic.title }}

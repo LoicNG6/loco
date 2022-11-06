@@ -53,9 +53,7 @@
     >
       <v-row align="center">
         <v-col cols="auto">
-          <v-btn :to="{ name: 'admin' }" color="" icon elevation="3" x-large>
-            <v-icon dark x-large>mdi-account-circle</v-icon>
-          </v-btn>
+          <v-icon dark x-large>mdi-account-circle</v-icon>
         </v-col>
         <v-col cols="6"> Admin </v-col>
       </v-row>
@@ -90,9 +88,13 @@
         selectedMenu: null,
       };
     },
+    mounted() {
+      this.menus.map((m) => {
+        if (this.$route.name == m.to) this.selectedMenu = m.positon;
+      });
+    },
     methods: {
       changeMenu(route_name) {
-        console.log(route_name);
         return this.$router.push({ name: route_name });
       },
     },

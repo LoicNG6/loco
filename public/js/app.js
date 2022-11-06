@@ -2278,9 +2278,14 @@ __webpack_require__.r(__webpack_exports__);
       selectedMenu: null
     };
   },
+  mounted: function mounted() {
+    var _this = this;
+    this.menus.map(function (m) {
+      if (_this.$route.name == m.to) _this.selectedMenu = m.positon;
+    });
+  },
   methods: {
     changeMenu: function changeMenu(route_name) {
-      console.log(route_name);
       return this.$router.push({
         name: route_name
       });
@@ -2424,15 +2429,11 @@ var render = function render() {
     attrs: {
       fluid: ""
     }
-  }, [_c("v-row", {
-    attrs: {
-      justify: "space-around"
-    }
-  }, _vm._l(_vm.topics, function (topic, index) {
+  }, [_c("v-row", _vm._l(_vm.topics, function (topic, index) {
     return _c("v-col", {
       key: index,
       attrs: {
-        cols: "2"
+        cols: "3"
       }
     }, [_c("v-own-card", {
       scopedSlots: _vm._u([{
@@ -2498,7 +2499,7 @@ var render = function render() {
   return _c("v-main", {
     staticClass: "background-color",
     style: _vm.$route.name == "Loco" ? "align-items: center" : ""
-  }, [_vm.$route.name != "Loco" ? _c("v-top-menu") : _vm._e(), _vm._v(" "), _vm.$route.name != "Loco" ? _c("v-left-menu") : _vm._e(), _vm._v(" "), _vm.$route.name == "Loco" ? _c("v-container", {
+  }, [!["Loco", "admin"].includes(_vm.$route.name) ? _c("v-top-menu") : _vm._e(), _vm._v(" "), !["Loco", "admin"].includes(_vm.$route.name) ? _c("v-left-menu") : _vm._e(), _vm._v(" "), _vm.$route.name == "Loco" ? _c("v-container", {
     staticClass: "title"
   }, [_c("v-row", {
     attrs: {
@@ -2569,7 +2570,7 @@ var render = function render() {
       color: "#392820",
       elevation: "5",
       rounded: "lg",
-      height: "300",
+      height: "350",
       dark: ""
     }
   }, [_c("v-container", [_c("v-row", {
@@ -2725,22 +2726,12 @@ var render = function render() {
     attrs: {
       cols: "auto"
     }
-  }, [_c("v-btn", {
-    attrs: {
-      to: {
-        name: "admin"
-      },
-      color: "",
-      icon: "",
-      elevation: "3",
-      "x-large": ""
-    }
   }, [_c("v-icon", {
     attrs: {
       dark: "",
       "x-large": ""
     }
-  }, [_vm._v("mdi-account-circle")])], 1)], 1), _vm._v(" "), _c("v-col", {
+  }, [_vm._v("mdi-account-circle")])], 1), _vm._v(" "), _c("v-col", {
     attrs: {
       cols: "6"
     }
