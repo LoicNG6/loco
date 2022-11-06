@@ -2150,7 +2150,30 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  props: {
+    showSection: Boolean
+  },
+  data: function data() {
+    return {
+      dialog: false
+    };
+  },
+  methods: {
+    getBack: function getBack() {
+      this.dialog = false;
+      this.$router.push({
+        name: "home"
+      });
+      this.$emit("close");
+    }
+  },
+  watch: {
+    showSection: function showSection() {
+      this.dialog = this.showSection;
+    }
+  }
+});
 
 /***/ }),
 
@@ -2238,8 +2261,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var _Sections_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Sections.vue */ "./resources/js/components/Sections.vue");
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  name: "v-own-card"
+  components: {
+    SectionsVue: _Sections_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  name: "v-own-card",
+  props: {
+    topic_id: Number
+  },
+  data: function data() {
+    return {
+      section: false
+    };
+  },
+  methods: {
+    goToSection: function goToSection() {
+      this.section = true;
+      this.$router.push({
+        name: "section",
+        params: {
+          id: this.topic_id
+        }
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -2436,6 +2483,9 @@ var render = function render() {
         cols: "3"
       }
     }, [_c("v-own-card", {
+      attrs: {
+        topic_id: topic.id
+      },
       scopedSlots: _vm._u([{
         key: "title",
         fn: function fn() {
@@ -2473,7 +2523,30 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("v-main", [_c("v-container", [_vm._v("\n        in section part\n    ")])], 1);
+  return _c("div", {
+    staticClass: "text-center"
+  }, [_c("v-dialog", {
+    attrs: {
+      width: "500"
+    },
+    model: {
+      value: _vm.dialog,
+      callback: function callback($$v) {
+        _vm.dialog = $$v;
+      },
+      expression: "dialog"
+    }
+  }, [_c("v-card", [_c("v-card-title", {
+    staticClass: "text-h5 grey lighten-2"
+  }, [_vm._v("\n        Privacy Policy\n      ")]), _vm._v(" "), _c("v-card-text", [_vm._v("\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do\n        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad\n        minim veniam, quis nostrud exercitation ullamco laboris nisi ut\n        aliquip ex ea commodo consequat. Duis aute irure dolor in\n        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\n        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in\n        culpa qui officia deserunt mollit anim id est laborum.\n      ")]), _vm._v(" "), _c("v-divider"), _vm._v(" "), _c("v-card-actions", [_c("v-spacer"), _vm._v(" "), _c("v-btn", {
+    attrs: {
+      color: "primary",
+      text: ""
+    },
+    on: {
+      click: _vm.getBack
+    }
+  }, [_vm._v(" I accept ")])], 1)], 1)], 1)], 1);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -2565,7 +2638,7 @@ __webpack_require__.r(__webpack_exports__);
 var render = function render() {
   var _vm = this,
     _c = _vm._self._c;
-  return _c("v-card", {
+  return _c("div", [_c("v-card", {
     attrs: {
       color: "#392820",
       elevation: "5",
@@ -2617,12 +2690,26 @@ var render = function render() {
     attrs: {
       width: "130",
       color: "#4e382f"
+    },
+    on: {
+      click: function click($event) {
+        return _vm.goToSection();
+      }
     }
   }, [_c("v-icon", {
     attrs: {
       light: ""
     }
-  }, [_vm._v(" mdi-eye-outline ")])], 1)], 1)], 1)], 1)], 1);
+  }, [_vm._v(" mdi-eye-outline ")])], 1)], 1)], 1)], 1)], 1), _vm._v(" "), _c("SectionsVue", {
+    attrs: {
+      showSection: _vm.section
+    },
+    on: {
+      close: function close($event) {
+        _vm.section = false;
+      }
+    }
+  })], 1);
 };
 var staticRenderFns = [];
 render._withStripped = true;

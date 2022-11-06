@@ -2,9 +2,9 @@
   <v-app>
     <v-main class="background-color pa-0">
       <v-container fluid>
-        <v-row >
+        <v-row>
           <v-col cols="3" v-for="(topic, index) in topics" :key="index">
-            <v-own-card>
+            <v-own-card :topic_id="topic.id">
               <template v-slot:title>
                 {{ topic.title }}
               </template>
