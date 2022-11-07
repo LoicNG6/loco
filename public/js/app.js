@@ -2159,9 +2159,22 @@ __webpack_require__.r(__webpack_exports__);
       dialog: false
     };
   },
+  computed: {
+    dialogOnChange: {
+      get: function get() {
+        return this.dialog;
+      },
+      set: function set(value) {
+        this.dialog = false;
+        if (this.dialog == false) this.getBack();
+      }
+    }
+  },
+  mounted: function mounted() {
+    this.dialogOnChange = false;
+  },
   methods: {
     getBack: function getBack() {
-      this.dialog = false;
       this.$router.push({
         name: "home"
       });
@@ -2527,26 +2540,23 @@ var render = function render() {
     staticClass: "text-center"
   }, [_c("v-dialog", {
     attrs: {
-      width: "500"
+      width: "1000"
     },
     model: {
-      value: _vm.dialog,
+      value: _vm.dialogOnChange,
       callback: function callback($$v) {
-        _vm.dialog = $$v;
+        _vm.dialogOnChange = $$v;
       },
-      expression: "dialog"
+      expression: "dialogOnChange"
     }
-  }, [_c("v-card", [_c("v-card-title", {
-    staticClass: "text-h5 grey lighten-2"
-  }, [_vm._v("\n        Privacy Policy\n      ")]), _vm._v(" "), _c("v-card-text", [_vm._v("\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do\n        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad\n        minim veniam, quis nostrud exercitation ullamco laboris nisi ut\n        aliquip ex ea commodo consequat. Duis aute irure dolor in\n        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla\n        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in\n        culpa qui officia deserunt mollit anim id est laborum.\n      ")]), _vm._v(" "), _c("v-divider"), _vm._v(" "), _c("v-card-actions", [_c("v-spacer"), _vm._v(" "), _c("v-btn", {
+  }, [_c("v-card", {
     attrs: {
-      color: "primary",
-      text: ""
-    },
-    on: {
-      click: _vm.getBack
+      height: "800",
+      color: "#392820"
     }
-  }, [_vm._v(" I accept ")])], 1)], 1)], 1)], 1);
+  }, [_c("v-card-title", {
+    staticClass: "text-h5 grey lighten-2"
+  }, [_vm._v("\n        Section.title\n      ")]), _vm._v(" "), _c("v-card-text", [_vm._v(" section.contain ")])], 1)], 1)], 1);
 };
 var staticRenderFns = [];
 render._withStripped = true;
@@ -3097,7 +3107,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_laravel_mix_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  margin: 0%;\n}\n.background-color {\n  background: linear-gradient(rgb(111, 75, 62), rgb(62, 39, 35));\n}\n.title {\n  font-size: x-large;\n  color: rgb(205, 194, 194);\n}\n.text {\n  font-size: large;\n  color: white;\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  margin: 0%;\n}\n.background-color {\n  background: linear-gradient(rgb(111, 75, 62), rgb(62, 39, 35));\n}\n.title {\n  font-size: x-large;\n  color: rgb(205, 194, 194);\n}\n.text {\n  font-size: large;\n  color: rgb(205, 194, 194);\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

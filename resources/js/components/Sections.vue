@@ -1,27 +1,11 @@
 <template>
   <div class="text-center">
-    <v-dialog v-model="dialog" width="500">
-      <v-card>
+    <v-dialog v-model="dialogOnChange" width="1000">
+      <v-card height="800" color="#392820">
         <v-card-title class="text-h5 grey lighten-2">
-          Privacy Policy
+          Section.title
         </v-card-title>
-
-        <v-card-text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
-        </v-card-text>
-
-        <v-divider></v-divider>
-
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="primary" text @click="getBack"> I accept </v-btn>
-        </v-card-actions>
+        <v-card-text> section.contain </v-card-text>
       </v-card>
     </v-dialog>
   </div>
@@ -36,9 +20,22 @@
         dialog: false,
       };
     },
+    computed: {
+      dialogOnChange: {
+        get() {
+          return this.dialog;
+        },
+        set(value) {
+          this.dialog = false;
+          if (this.dialog == false) this.getBack();
+        },
+      },
+    },
+    mounted() {
+      this.dialogOnChange = false;
+    },
     methods: {
       getBack() {
-        this.dialog = false;
         this.$router.push({ name: "home" });
         this.$emit("close");
       },
