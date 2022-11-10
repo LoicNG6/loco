@@ -26,6 +26,7 @@ const routes = [
                         path: "section/:id",
                         name: "section",
                         component: Section,
+                        props:true,
                     },
                 ]
             },

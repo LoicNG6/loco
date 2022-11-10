@@ -97,6 +97,6 @@
       changeMenu(route_name) {
         return this.$router.push({ name: route_name });
       },
-    },
+    }
   };
 </script>

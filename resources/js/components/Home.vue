@@ -1,34 +1,49 @@
 <template>
-  <v-app>
-    <v-main class="background-color pa-0">
-      <v-container fluid>
-        <v-row>
-          <v-col cols="3" v-for="(topic, index) in topics" :key="index">
-            <v-own-card :topic_id="topic.id">
-              <template v-slot:title>
+  <v-container fluid v-if="$route.name == 'home'">
+    <v-row>
+      <v-col cols="3" v-for="(topic, index) in topics" :key="index">
+        <v-card color="#392820" elevation="5" rounded="lg" height="350" dark>
+          <v-container>
+            <v-row justify="center">
+              <v-col cols="auto">
+                {{ topic.img }}
+              </v-col>
+            </v-row>
+            <v-row justify="center">
+              <v-col cols="auto">
                 {{ topic.title }}
-              </template>
-              <template v-slot:description>
+              </v-col>
+            </v-row>
+            <v-row><v-divider dark></v-divider></v-row>
+            <v-row justify="center">
+              <v-col cols="12">
                 {{ topic.description }}
-              </template>
-            </v-own-card>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-main>
-  </v-app>
+              </v-col>
+            </v-row>
+            <v-row justify="center">
+              <v-col cols="8" justify-center style="text-align: center">
+                <v-btn
+                  @click="goToSection(topic.id)"
+                  width="130"
+                  color="#4e382f"
+                >
+                  <v-icon light> mdi-eye-outline </v-icon>
+                </v-btn>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container>
+  <router-view v-else />
 </template>
 <script>
   import axios from "axios";
-  import VOwnCard from "./tools/VCard.vue";
 
   export default {
-    components: {
-      VOwnCard,
-    },
     data: () => {
       return {
-        drawer: false,
         topics: null,
       };
     },
@@ -36,9 +51,6 @@
       this.getTopics();
     },
     methods: {
-      changeDrawer() {
-        this.drawer = !this.drawer;
-      },
       getTopics() {
         axios
           .get("/api/topics")
@@ -49,8 +61,13 @@
             console.log(error);
           });
       },
-      goToSection() {
-        this.router.push({ name: "" });
+      goToSection(id) {
+        this.$router.push({
+          name: "section",
+          params: {
+            id: id,
+          },
+        });
       },
     },
   };
