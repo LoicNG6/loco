@@ -7,6 +7,10 @@ import Vuetify from 'vuetify';
 import 'vuetify/dist/vuetify.min.css'
 import '@mdi/font/css/materialdesignicons.css';
 import '../css/app.scss';
+import axios from "axios";
+
+
+Vue.prototype.$axios = axios;
 
 Vue.use(VueRouter);
 Vue.use(Vuetify);

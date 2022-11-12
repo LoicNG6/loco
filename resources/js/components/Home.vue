@@ -22,11 +22,7 @@
             </v-row>
             <v-row justify="center">
               <v-col cols="8" justify-center style="text-align: center">
-                <v-btn
-                  @click="goToSection(topic.id)"
-                  width="130"
-                  color="#4e382f"
-                >
+                <v-btn @click="goToSection(topic)" width="130" color="#4e382f">
                   <v-icon light> mdi-eye-outline </v-icon>
                 </v-btn>
               </v-col>
@@ -39,8 +35,6 @@
   <router-view v-else />
 </template>
 <script>
-  import axios from "axios";
-
   export default {
     data: () => {
       return {
@@ -52,7 +46,7 @@
     },
     methods: {
       getTopics() {
-        axios
+        this.$axios
           .get("/api/topics")
           .then((res) => {
             this.topics = res.data.data;
@@ -61,11 +55,12 @@
             console.log(error);
           });
       },
-      goToSection(id) {
+      goToSection(topic) {
         this.$router.push({
           name: "section",
           params: {
-            id: id,
+            id: topic.id,
+            topic_title: topic.title,
           },
         });
       },
