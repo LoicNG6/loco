@@ -1,39 +1,57 @@
 <template>
   <v-container class="text">
     <v-row class="my-8">
-      <v-col style="border: solid; text-align: center" class="title">
-        the section
+      <v-col style="text-align: center">
+        <span style="font-size: 3em; font-weight: bold">Section title</span>
       </v-col>
     </v-row>
-    <v-row>
-      <v-col style="border: solid">
-        <v-card height="500">
-          <v-card-title>Section description</v-card-title>
+    <v-row justify="space-around">
+      <v-col cols="auto">
+        <v-card
+          color="transparent"
+          height="500"
+          width="400"
+          rounded="xl"
+          class="px-4 paragraph"
+          elevation="5"
+        >
+          <v-card-title class="text">Section description :</v-card-title>
         </v-card>
       </v-col>
-      <v-col style="border: solid" cols="5">
+      <v-col cols="5">
         <v-row justify="space-around">
-          <v-col cols="auto" style="border: solid">
-            <v-card height="200" rounded="circle" width="200"> </v-card>
-          </v-col>
-          <v-col cols="auto" style="border: solid" justify-center >
-            <v-card height="200" rounded="circle" width="200"> </v-card>
-          </v-col>
-        </v-row>
-        <v-row justify="space-around" class="mt-8">
-          <v-col cols="auto" style="border: solid" justify-center>
-            <v-card height="200" rounded="circle" width="200"> </v-card>
-          </v-col>
-          <v-col cols="auto" style="border: solid">
-            <v-card height="200" rounded="circle" width="200"> </v-card>
+          <v-col cols="auto">
+            <v-hover v-slot="{ hover }">
+              <v-card
+                color="#401F13"
+                :height="hover ? 210 : 200"
+                rounded="xl"
+                :width="hover ? 210 : 200"
+                :elevation="hover ? 20 : 10"
+                style="text-align: center; cursor: pointer"
+                :style="hover ? 'background-color: rgba(64, 31, 19, 0.5)' : ''"
+                to="subject"
+              >
+                <v-container class="text">
+                  <v-row justify="center">
+                    <v-col> subject log/img </v-col>
+                  </v-row>
+                </v-container>
+              </v-card>
+            </v-hover>
           </v-col>
         </v-row>
       </v-col>
     </v-row>
+    <Subjects></Subjects>
   </v-container>
 </template>
 <script>
+  import Subjects from "./Subjects.vue";
   export default {
+    components:{
+      Subjects,
+    },
     props: {
       id: String,
       topic_title: String,

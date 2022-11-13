@@ -8,8 +8,22 @@ body {
 
 .text {
   font-size: large;
-  color: rgb(205, 194, 194);
+  font-family: "Gill Sans", sans-serif;
+  color: rgb(240, 234, 234);
 }
 .text .title {
-  font-size: 2em;
+  font-size: 4em;
+  font-weight: bold;
+}
+.text .paragraph {
+  text-align: justify;
+}
+
+.section .subject {
+  background-color: rgb(64, 31, 19);
+  background-color: #967468;
+}
+
+.s {
+  border: solid;
 }

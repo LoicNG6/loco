@@ -4,14 +4,32 @@ body {
 
 .background-color {
     background: linear-gradient(rgb(111, 75, 62), rgb(62, 39, 35));
-    // background: rgb(229, 224, 216);
+    // next color for the next version 
+    //background: rgb(229, 224, 216);
 }
 
 .text {
     font-size: large;
-    color: rgb(205, 194, 194);
+    font-family: "Gill Sans", sans-serif;
+    color: rgb(240, 234, 234);
 
     .title {
-        font-size: 2em;
+        font-size: 4em;
+        font-weight: bold;
     }
+
+    .paragraph {
+        text-align: justify;
+    }
+}
+
+.section {
+    .subject {
+        background-color: rgb(64, 31, 19);
+        background-color: #967468;
+    }
+}
+
+.s {
+    border: solid;
 }
